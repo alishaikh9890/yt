@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from 'react'
-const key =  import.meta.env.VITE_YOUTUBE_KEY
+
+// const key =  import.meta.env.VITE_YOUTUBE_KEY1
+const key =  import.meta.env.VITE_YOUTUBE_KEY2
+// const key =  import.meta.env.VITE_YOUTUBE_KEY3
+
+import {data } from './vid'
+import Video from './video'
 
 const Youtube = () => {
 
-
-    const [data, setData] = useState([])
+    // const [data, setData] = useState([])
     const [pageToken, setPageToken] = useState('')
 
 
        const fetchData =async (page) => {
-            const res = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${key}&part=snippet&maxResults=6${page ? `pageToken=${page}` : ''}&q=programming`)
+            // const res = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${key}&part=snippet&maxResults=6&videoDuration=medium${page ? `pageToken=${page}` : ''}&q=programming`)
+            const res = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${key}&part=snippet&type=video&maxResults=6&videoDuration=medium&q=programming${page ? `&pageToken=${page}` : ''}`)
             const newdata = await res.json();
             
             console.log(newdata)
@@ -17,21 +23,22 @@ const Youtube = () => {
             setData([...data ,...newdata.items])
         }
 
-    useEffect(()=>{
-        fetchData()
-    },[])
+    // useEffect(()=>{
+    //     fetchData()
+    // },[])
 
     console.log()
     return (
-        <div>
+        <div className=''>
         
-        <div className="container my-5">
-        <div className="row">
+        <div className="max-w-7xl mx-auto ">
+        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 gap-4">
         {
-            data.map((ele)=>(
-                <div className='col-4'>
-                
-                <iframe width="100%" height="300px" src={`https://www.youtube.com/embed/${ele.id.videoId}?modestbranding=1&rel=0&showinfo=0`}></iframe>
+            data.items.map((ele)=>(
+                <div key={ele.etag} className=''>
+                    
+                  <Video vidId={ele.id.videoId}  title={ele.snippet.title} thumb={ele.snippet.thumbnails}/>
+                {/* <iframe width="100%" height="300px" src={`https://www.youtube.com/embed/${ele.id.videoId}?modestbranding=1&rel=0&showinfo=0`}></iframe> */}
                 </div>
             ))
         }
