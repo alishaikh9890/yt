@@ -35,7 +35,6 @@ const Video = ({ vidId, title, thumb }) => {
 
 
     const opts = {
-        height: '245px',
         width: '100%',
        playerVars: {
                 autoplay: 0,        // Autoplay the video
@@ -58,4 +57,4 @@ const Video = ({ vidId, title, thumb }) => {
     )
 }
 
-export default Video
+export default Video 
