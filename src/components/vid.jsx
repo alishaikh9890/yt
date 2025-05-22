@@ -1,4 +1,170 @@
 
+export const channels = [
+    {
+        "kind": "youtube#channel",
+        "etag": "hKJk9SYfyJcjpywxNGPGswMejKo",
+        "id": "UCRLEADhMcb8WUdnQ5_Alk7g",
+        "snippet": {
+            "title": "Aaron Jack",
+            "description": "From Broke English Teacher to Uber Software Engineer to Remote Solo Software Developer.\nJoin the Freelance Code Bootcamp: https://freemote.com\n",
+            "customUrl": "@aaronjack",
+            "publishedAt": "2018-09-09T19:35:18Z",
+            "thumbnails": {
+                "default": {
+                    "url": "https://yt3.ggpht.com/40SE9hF9oDMoGjoKDdQEG8e6HJML5c_fVP40Vfm2hMrfkvqqMYrVCyPoGXlMFFNE89rN10EQJQ=s88-c-k-c0x00ffffff-no-rj",
+                    "width": 88,
+                    "height": 88
+                },
+                "medium": {
+                    "url": "https://yt3.ggpht.com/40SE9hF9oDMoGjoKDdQEG8e6HJML5c_fVP40Vfm2hMrfkvqqMYrVCyPoGXlMFFNE89rN10EQJQ=s240-c-k-c0x00ffffff-no-rj",
+                    "width": 240,
+                    "height": 240
+                },
+                "high": {
+                    "url": "https://yt3.ggpht.com/40SE9hF9oDMoGjoKDdQEG8e6HJML5c_fVP40Vfm2hMrfkvqqMYrVCyPoGXlMFFNE89rN10EQJQ=s800-c-k-c0x00ffffff-no-rj",
+                    "width": 800,
+                    "height": 800
+                }
+            },
+            "localized": {
+                "title": "Aaron Jack",
+                "description": "From Broke English Teacher to Uber Software Engineer to Remote Solo Software Developer.\nJoin the Freelance Code Bootcamp: https://freemote.com\n"
+            },
+            "country": "US"
+        }
+    },
+    {
+        "kind": "youtube#channel",
+        "etag": "g3xl8hWqnmypt2ezjj9azazctCg",
+        "id": "UCY6VZZo9MZCyIIozTs0khNA",
+        "snippet": {
+            "title": "easy, actually",
+            "description": "explaining stuff with few word and more picture\n\nComment to suggest stuff you want to see!\n\nOr use: cerealfishfr@gmail.com\n\nThe discord! (so you don't have to use the community tab):\n\nhttps://discord.com/invite/xJZB4CwWk3",
+            "customUrl": "@easyactually",
+            "publishedAt": "2024-01-13T17:50:36.142011Z",
+            "thumbnails": {
+                "default": {
+                    "url": "https://yt3.ggpht.com/csTvPwNzaRWgjuVp1jwDhSe77wBZ3crmPihkrvybd217xnB5IrkgMKW7KmGw0oVS9E6ekpY0=s88-c-k-c0x00ffffff-no-rj",
+                    "width": 88,
+                    "height": 88
+                },
+                "medium": {
+                    "url": "https://yt3.ggpht.com/csTvPwNzaRWgjuVp1jwDhSe77wBZ3crmPihkrvybd217xnB5IrkgMKW7KmGw0oVS9E6ekpY0=s240-c-k-c0x00ffffff-no-rj",
+                    "width": 240,
+                    "height": 240
+                },
+                "high": {
+                    "url": "https://yt3.ggpht.com/csTvPwNzaRWgjuVp1jwDhSe77wBZ3crmPihkrvybd217xnB5IrkgMKW7KmGw0oVS9E6ekpY0=s800-c-k-c0x00ffffff-no-rj",
+                    "width": 800,
+                    "height": 800
+                }
+            },
+            "localized": {
+                "title": "easy, actually",
+                "description": "explaining stuff with few word and more picture\n\nComment to suggest stuff you want to see!\n\nOr use: cerealfishfr@gmail.com\n\nThe discord! (so you don't have to use the community tab):\n\nhttps://discord.com/invite/xJZB4CwWk3"
+            }
+        }
+    },
+    {
+        "kind": "youtube#channel",
+        "etag": "LWiQBpQeq9S2D05upytGW7FQ8nk",
+        "id": "UC39VnEdRvgJmIKBDdmj0dIQ",
+        "snippet": {
+            "title": "The Unqualified Tutor",
+            "description": "Teaching what I learn.\n",
+            "customUrl": "@theunqualifiedtutor",
+            "publishedAt": "2024-03-26T11:10:09.508379Z",
+            "thumbnails": {
+                "default": {
+                    "url": "https://yt3.ggpht.com/hhavIZay50DzDPVEDNtzvuYnJd-cEC--mF0gffoRAjmRvEzK_SeZLm1SPpBiNU0AHC6J4aKU=s88-c-k-c0x00ffffff-no-rj",
+                    "width": 88,
+                    "height": 88
+                },
+                "medium": {
+                    "url": "https://yt3.ggpht.com/hhavIZay50DzDPVEDNtzvuYnJd-cEC--mF0gffoRAjmRvEzK_SeZLm1SPpBiNU0AHC6J4aKU=s240-c-k-c0x00ffffff-no-rj",
+                    "width": 240,
+                    "height": 240
+                },
+                "high": {
+                    "url": "https://yt3.ggpht.com/hhavIZay50DzDPVEDNtzvuYnJd-cEC--mF0gffoRAjmRvEzK_SeZLm1SPpBiNU0AHC6J4aKU=s800-c-k-c0x00ffffff-no-rj",
+                    "width": 800,
+                    "height": 800
+                }
+            },
+            "localized": {
+                "title": "The Unqualified Tutor",
+                "description": "Teaching what I learn.\n"
+            },
+            "country": "GB"
+        }
+    },
+    {
+        "kind": "youtube#channel",
+        "etag": "ZdaQguT8670rgVbNs2AZaCe3x_U",
+        "id": "UCsBjURrPoezykLs9EqgamOA",
+        "snippet": {
+            "title": "Fireship",
+            "description": "High-intensity ⚡ code tutorials and tech news to help you ship your app faster. New videos every week covering the topics every programmer should know. \n\nThe original home of #100SecondsOfCode #TheCodeReport and #CodeThisNotThat. Created by Jeff Delaney. \n\nBuilding an app? Get project support, advanced full courses, and more at https://fireship.io",
+            "customUrl": "@fireship",
+            "publishedAt": "2017-04-07T18:17:23Z",
+            "thumbnails": {
+                "default": {
+                    "url": "https://yt3.ggpht.com/ytc/AIdro_mKzklyPPhghBJQH5H3HpZ108YcE618DBRLAvRUD1AjKNw=s88-c-k-c0x00ffffff-no-rj",
+                    "width": 88,
+                    "height": 88
+                },
+                "medium": {
+                    "url": "https://yt3.ggpht.com/ytc/AIdro_mKzklyPPhghBJQH5H3HpZ108YcE618DBRLAvRUD1AjKNw=s240-c-k-c0x00ffffff-no-rj",
+                    "width": 240,
+                    "height": 240
+                },
+                "high": {
+                    "url": "https://yt3.ggpht.com/ytc/AIdro_mKzklyPPhghBJQH5H3HpZ108YcE618DBRLAvRUD1AjKNw=s800-c-k-c0x00ffffff-no-rj",
+                    "width": 800,
+                    "height": 800
+                }
+            },
+            "localized": {
+                "title": "Fireship",
+                "description": "High-intensity ⚡ code tutorials and tech news to help you ship your app faster. New videos every week covering the topics every programmer should know. \n\nThe original home of #100SecondsOfCode #TheCodeReport and #CodeThisNotThat. Created by Jeff Delaney. \n\nBuilding an app? Get project support, advanced full courses, and more at https://fireship.io"
+            },
+            "country": "US"
+        }
+    },
+    {
+        "kind": "youtube#channel",
+        "etag": "s0J6Y_2YGruJY1gt09JP5Ktutpo",
+        "id": "UC5--wS0Ljbin1TjWQX6eafA",
+        "snippet": {
+            "title": "bigboxSWE",
+            "description": "bigboxSWE",
+            "customUrl": "@bigboxswe",
+            "publishedAt": "2023-03-14T09:21:21.223601Z",
+            "thumbnails": {
+                "default": {
+                    "url": "https://yt3.ggpht.com/z1YVihkpWgDP7h8bCNZb5qJ0N3Eu26VZmwyjbdpaNmkGfgPW29JIMQdpaP2PEY3vjhARWmG2yA=s88-c-k-c0x00ffffff-no-rj",
+                    "width": 88,
+                    "height": 88
+                },
+                "medium": {
+                    "url": "https://yt3.ggpht.com/z1YVihkpWgDP7h8bCNZb5qJ0N3Eu26VZmwyjbdpaNmkGfgPW29JIMQdpaP2PEY3vjhARWmG2yA=s240-c-k-c0x00ffffff-no-rj",
+                    "width": 240,
+                    "height": 240
+                },
+                "high": {
+                    "url": "https://yt3.ggpht.com/z1YVihkpWgDP7h8bCNZb5qJ0N3Eu26VZmwyjbdpaNmkGfgPW29JIMQdpaP2PEY3vjhARWmG2yA=s800-c-k-c0x00ffffff-no-rj",
+                    "width": 800,
+                    "height": 800
+                }
+            },
+            "localized": {
+                "title": "bigboxSWE",
+                "description": "bigboxSWE"
+            }
+        }
+    }
+]
+
 export const views = [
     {
         "kind": "youtube#video",
