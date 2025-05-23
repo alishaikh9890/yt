@@ -1,11 +1,10 @@
-import { UserMinusIcon } from '@heroicons/react/24/outline'
-import { UserIcon, UserPlusIcon, UsersIcon } from '@heroicons/react/24/outline'
+
 import { Bars3Icon, EllipsisVerticalIcon, MagnifyingGlassIcon, MicrophoneIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 import React from 'react'
 
 const Navbar = () => {
     return (
-        <div className='fixed top-0 start-0 w-full bg-gray-950 z-30 flex justify-between items-center text-white p-2'>
+        <div className='fixed top-0 start-0 w-full bg-[#0f0f0f] z-30 flex justify-between items-center text-white p-2'>
             <div className='flex gap-3 items-center'>
                 <button className=' hover:bg-gray-700 focus:bg-gray-600 rounded-full p-2'>
                     <Bars3Icon className='text-white h-6 w-6' />
