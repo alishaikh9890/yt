@@ -28,8 +28,9 @@ const Youtube = () => {
             const channels = newdata.items.map((ele)=>ele.snippet.channelId)
             const chanId = channels.join()
 
-             const viewRes = await fetch(`${base_url}/videos?key=${key}&part=statistics&id=${vidIds}`)
+             const viewRes = await fetch(`${base_url}/videos?key=${key}&part=statistics,contentDetails&id=${vidIds}`)
              const viewCount = await viewRes.json()
+             console.log(viewCount)
 
              const chanThumb = await fetch(`${base_url}/channels?key=${key}&part=snippet&id=${chanId}`)
              const thumb = await chanThumb.json()
@@ -48,6 +49,7 @@ const Youtube = () => {
                 let stat = viewCount.items.find((el) => el.id === ele.id.videoId)
                 if(stat){
                   ele.snippet.viewCount = stat.statistics.viewCount;
+                  ele.snippet.duration = stat.contentDetails.duration
                 }
                 let chan = thumb.items.find((el) =>el.id == ele.snippet.channelId)
                 if(chan)
@@ -77,9 +79,9 @@ const Youtube = () => {
                     
                   <Video  vidId={ele.id.videoId}  title={ele.snippet.title} thumb={ele.snippet.thumbnails}/>
                 {/* <iframe width="100%" height="300px" src={`https://www.youtube.com/embed/${ele.id.videoId}?modestbranding=1&rel=0&showinfo=0`}></iframe> */}
-                <div className="grid grid-cols-[10%_86%] gap-4 my-3">
-                    <div className="">
-                      <img className='w-full rounded-full' src={ele.snippet.channelThumb.url} alt="" />
+                <div className="flex gap-4 my-3">
+                    <div className="pt-1">
+                      <img className='rounded-full'  style={{width:"40px", height:"40px"}} src={ele.snippet.channelThumb.url} alt="" />
                     </div>
                     <div className="">
                         <h2 className='text-white text-lg font-medium'>{ele.snippet.title}</h2>

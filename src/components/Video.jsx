@@ -53,7 +53,7 @@ const Video = ({ vidId, title, thumb }) => {
     return (
         // <div className='border border-red-500 w-full aspect-video max-w-mdrounded-2xl overflow-hidden'>
         <div  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}  className={ `relative cursor-pointer aspect-video overflow-hidden ${playing && `rounded-2xl`}` }>
-          { playing &&   <img src={thumb.high.url} className='absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300' /> }
+          { playing &&  <img src={thumb.high.url} className='absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300' /> }
 
             <YouTube style={{aspectRatio:"5/2.81", cursor:"pointer"}} videoId={vidId} opts={opts} onReady={onReady}  />
         </div>
