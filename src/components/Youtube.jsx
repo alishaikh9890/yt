@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from 'react'
 const key =  import.meta.env.VITE_YOUTUBE_KEY3
 
 // import {data } from './vid'
-import Video from './video'
+import Video from './Video'
 import Published from './Published'
 
 const Youtube = () => {
