@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 // const key =  import.meta.env.VITE_YOUTUBE_KEY1
 // const key =  import.meta.env.VITE_YOUTUBE_KEY2
@@ -18,23 +18,33 @@ const Youtube = () => {
 
 
        const fetchData =async (page) => {
+
+        try {
             // const res = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${key}&part=snippet&maxResults=6&videoDuration=medium${page ? `pageToken=${page}` : ''}&q=programming`)
-            const res = await fetch(`${base_url}/search?key=${key}&part=snippet&type=video&maxResults=6&videoDuration=medium&q=marvel${page ? `&pageToken=${page}` : ''}`)
+            const res = await fetch(`${base_url}/search?key=${key}&part=snippet&type=video&maxResults=8&videoDuration=medium&q=marvel${page ? `&pageToken=${page}` : ''}`)
             const newdata = await res.json();
 
-            const stats = newdata.items.map((ele)=>ele.id.videoId)
-            const vidIds = stats.join()
 
-            const channels = newdata.items.map((ele)=>ele.snippet.channelId)
-            const chanId = channels.join()
+            if(!newdata.items) {
+              return
+            }
+           
+              console.log(newdata)
+              const stats = newdata.items.map((ele)=>ele.id.videoId)
+              const vidIds = stats.join()
 
-             const viewRes = await fetch(`${base_url}/videos?key=${key}&part=statistics,contentDetails&id=${vidIds}`)
-             const viewCount = await viewRes.json()
-             console.log(viewCount)
+              const channels = newdata.items.map((ele)=>ele.snippet.channelId)
+              const chanId = channels.join()
 
-             const chanThumb = await fetch(`${base_url}/channels?key=${key}&part=snippet&id=${chanId}`)
-             const thumb = await chanThumb.json()
+              const viewRes = await fetch(`${base_url}/videos?key=${key}&part=statistics,contentDetails&id=${vidIds}`)
+              const viewCount = await viewRes.json()
+              console.log(viewCount)
 
+              const chanThumb = await fetch(`${base_url}/channels?key=${key}&part=snippet&id=${chanId}`)
+              const thumb = await chanThumb.json()
+
+           
+          
              
              
              //  let viewStat = viewCount.items.map((ele) =>{
@@ -45,37 +55,66 @@ const Youtube = () => {
               // console.log(viewCount.items)
               
               
-              const updateData = newdata.items.map((ele) => {
-                let stat = viewCount.items.find((el) => el.id === ele.id.videoId)
-                if(stat){
-                  ele.snippet.viewCount = stat.statistics.viewCount;
-                  ele.snippet.duration = stat.contentDetails.duration
-                }
-                let chan = thumb.items.find((el) =>el.id == ele.snippet.channelId)
-                if(chan)
-                  {
-                    ele.snippet.channelThumb = chan.snippet.thumbnails.default
-                  }
-                  return ele
-                })
-                
-                console.log(updateData)
-            setPageToken(newdata.nextPageToken || '')
-            setData([...data ,...updateData])
+
+
+
+             const updateData = newdata.items.map((ele) => {
+               let stat = viewCount.items.find((el) => el.id === ele.id.videoId)
+               if(stat){
+                 ele.snippet.viewCount = stat.statistics.viewCount;
+                 ele.snippet.duration = stat.contentDetails.duration
+               }
+               let chan = thumb.items.find((el) =>el.id == ele.snippet.channelId)
+               if(chan)
+                 {
+                   ele.snippet.channelThumb = chan.snippet.thumbnails.default
+                 }
+                 return ele
+               })
+               
+
+               console.log(updateData)
+           setPageToken(newdata.nextPageToken || '')
+           setData([...data ,...updateData])
+             
+        } catch (error) {
+          console.log(error)
+        }
+
+          
         }
 
     useEffect(()=>{
         fetchData()
     },[])
 
+    const aref = useRef()
+
+    window.onscroll = (e) => {
+
+        let lastEle = aref.current.children[aref.current.children.length-1]
+
+        let lastRect=  lastEle.getBoundingClientRect().top
+        let mainRect = window.innerHeight
+        console.log("lastRect " +lastRect)
+        console.log("lastRect " +mainRect)
+
+        console.log(window.scrollY)
+
+        if(lastRect < mainRect && pageToken)
+        {
+         fetchData(pageToken)
+        }
+    }
+
     return (
         <>
         
         <div className="mx-auto pt-20 p-3">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div  ref = {aref}  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {
             data.map((ele)=>(
-                <div className='p-2' key={ele.etag} >
+                <div className='p-2' key={ele.id.videoId} >
                     
                   <Video  vidId={ele.id.videoId}  title={ele.snippet.title} thumb={ele.snippet.thumbnails}/>
                 {/* <iframe width="100%" height="300px" src={`https://www.youtube.com/embed/${ele.id.videoId}?modestbranding=1&rel=0&showinfo=0`}></iframe> */}
