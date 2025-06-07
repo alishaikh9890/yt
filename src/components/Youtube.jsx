@@ -124,7 +124,7 @@ const Youtube = () => {
         {
             data.map((ele)=>(
                 <div className='p-2' key={ele.id.videoId} >
-                    
+                    <nav></nav>
                   <Video  vidId={ele.id.videoId}  title={ele.snippet.title} thumb={ele.snippet.thumbnails}/>
                 {/* <iframe width="100%" height="300px" src={`https://www.youtube.com/embed/${ele.id.videoId}?modestbranding=1&rel=0&showinfo=0`}></iframe> */}
                 <div className="flex gap-4 my-3">
