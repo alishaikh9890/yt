@@ -9,21 +9,21 @@ const Navbar = () => {
                 <button className=' hover:bg-gray-700 focus:bg-gray-600 rounded-full p-2'>
                     <Bars3Icon className='text-white h-6 w-6' />
                 </button>
-                <img className='w-10' src='https://cdn-icons-png.flaticon.com/128/1384/1384060.png' alt='' />
+                <img className='w-7' src='https://cdn-icons-png.flaticon.com/128/1384/1384060.png' alt='' />
                 <h2 className='text-white font-bold tracking-wider text-2xl'>YouTube</h2>
             </div>
             <div className='flex gap-3 items-center'>
-                <div className=' w-2xl flex items-center rounded-full border border-gray-600'>
-                    <button className='py-2 px-4'>
-                        <MagnifyingGlassIcon className='text-white h-6 w-6' />
-                    </button>
-                    <input type='text' placeholder='Search' className='w-full outline-0 p-2 text-white focus:border focus:border-blue-900' />
-                    <button className='py-2 px-4 bg-gray-700 rounded-e-full'>
-                        <MagnifyingGlassIcon className='text-white h-6 w-6' />
+                <div className='max-w-2xl flex items-center rounded-full border border-gray-600'>
+                <input type='text' placeholder='Search' className='peer w-full text-sm outline-0 py-1.5 ps-4 text-white' />
+                <button className='hidden peer-focus:block peer-focus:order-first  py-1.5 ps-4'>
+                   <MagnifyingGlassIcon className='text-white h-5 w-5' />
+               </button>
+                    <button className='py-1.5 px-4 bg-gray-700 rounded-e-full'>
+                        <MagnifyingGlassIcon className='text-white h-5 w-5' />
                     </button>
                 </div>
-                <button className=' bg-gray-800 hover:bg-gray-700 focus:bg-gray-600 rounded-full p-2'>
-                    <MicrophoneIcon className='text-white h-6 w-6' />
+                <button className='bg-gray-800 hover:bg-gray-700 focus:bg-gray-600 rounded-full p-2'>
+                    <MicrophoneIcon className='text-white h-5 w-5' />
                 </button>
             </div>
             <div className='flex items-center gap-2'>
