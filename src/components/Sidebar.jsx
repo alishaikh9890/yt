@@ -15,7 +15,7 @@ import {
   ClipIcon
 } from "../icons/Icons";
 
-const Sidebar = () => {
+const Sidebar = ({side, setSide}) => {
   const sideIcons = [
     {
       id: 0,
@@ -72,9 +72,9 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="w-60 border border-amber-100 p-2 fixed h-screen start-0 bottom-0 z-50">
-      <div className="flex gap-3 items-center">
-        <button className=" hover:bg-gray-700 focus:bg-gray-600 rounded-full p-2">
+    <div className={`${!side ? `-translate-x-full` : `translate-x-0`} transition-all duration-100 w-60 border border-e-neutral-900 bg-neutral-910 p-2 fixed h-screen start-0 bottom-0 z-50 bg-youtube`}>
+      <div className="flex gap-3 items-center  bg-zinc-850">
+        <button onClick={() => setSide(!side)} className=" hover:bg-gray-700 focus:bg-gray-600 rounded-full p-2">
           <Bars3Icon className="text-white h-6 w-6" />
         </button>
         <img

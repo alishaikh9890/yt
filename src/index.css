@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+
+.bg-youtube{
+    @apply bg-[#0f0f0f]
+}
