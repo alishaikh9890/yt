@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
- const key =  import.meta.env.VITE_YOUTUBE_KEY1
-// const key =  import.meta.env.VITE_YOUTUBE_KEY2
+//  const key =  import.meta.env.VITE_YOUTUBE_KEY1
+const key =  import.meta.env.VITE_YOUTUBE_KEY2
 // const key =  import.meta.env.VITE_YOUTUBE_KEY3
 
 // import {data } from './vid'
@@ -17,7 +17,6 @@ const Youtube = () => {
     const [loading, setLoading] = useState(true)
 
     const base_url = 'https://www.googleapis.com/youtube/v3'
-
 
 
        const fetchData =async (page) => {
