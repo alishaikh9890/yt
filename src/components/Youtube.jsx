@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 //  const key =  import.meta.env.VITE_YOUTUBE_KEY1
-const key =  import.meta.env.VITE_YOUTUBE_KEY2
+// const key =  import.meta.env.VITE_YOUTUBE_KEY2
 // const key =  import.meta.env.VITE_YOUTUBE_KEY3
 
 // import {data } from './vid'
@@ -24,7 +24,7 @@ const Youtube = () => {
         setLoading(true)
         try {
             // const res = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${key}&part=snippet&maxResults=6&videoDuration=medium${page ? `pageToken=${page}` : ''}&q=programming`)
-            const res = await fetch(`${base_url}/search?key=${key}&part=snippet&type=video&maxResults=8&videoDuration=medium&q=marvel${page ? `&pageToken=${page}` : ''}`)
+            const res = await fetch(`${base_url}/search?key=${key}&part=snippet&type=video&maxResults=8&videoDuration=medium&q=${page ? `&pageToken=${page}` : ''}`)
             const newdata = await res.json();
 
 
@@ -97,7 +97,7 @@ const Youtube = () => {
 
     const aref = useRef()
 
-    window.onscroll = (e) => {
+    window.onscroll = () => {
 
         let lastEle = aref.current.children[aref.current.children.length-1]
 

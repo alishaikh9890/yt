@@ -6,7 +6,7 @@ const Navbar = ({side, setSide}) => {
 
 
     return (
-        <div className='fixed top-0 start-0 w-full z-30 flex justify-between items-center text-white p-2'>
+        <div className='fixed top-0 start-0 w-full z-30 flex justify-between items-center text-white p-2 bg-youtube'>
             <div className='flex gap-3 items-center'>
                 <button onClick={() => setSide(!side)} className=' hover:bg-gray-700 focus:bg-gray-600 rounded-full p-2'>
                     <Bars3Icon className='text-white h-6 w-6' />
